@@ -1,6 +1,6 @@
 "use client";
 
-import { RefreshIcon } from "hugeicons-react";
+import { Copy01Icon, RefreshIcon } from "hugeicons-react";
 import { Input } from "@/components/ui/input";
 import { useEffect, useState } from "react";
 import copyToClipboard from "@/utils/copy-to-clipboard";
@@ -111,7 +111,7 @@ const MemorablePassword = () => {
         <input
           disabled
           type="text"
-          className="flex-1 h-full  outline-none  px-4 bg-transparent "
+          className="flex-1 h-full  outline-none text-[16px] md:text-[20px]  px-4 bg-transparent "
           value={password}
         />
 
@@ -124,28 +124,26 @@ const MemorablePassword = () => {
         </div>
       </div>
 
-      <div className="flex space-x-6 justify-between mt-2  pb-4">
-        <span
-          style={{ color: strengthColor }}
-          className={`px-4 !bg-[${strengthColor}]/80`}
-        >
+      <div className="flex space-x-6 justify-between mt-2 border-b border-grey-200 pb-4 pr-[22px]">
+        <span style={{ color: strengthColor }} className="">
           {passwordStrength}
         </span>
-        <Text
+        <div
           onClick={() => copyToClipboard(password)}
-          size="xs"
-          weight="medium"
-          className="text-primary-500 cursor-pointer"
+          className="flex items-center cursor-pointer w-fit "
         >
-          Copy
-        </Text>
+          <Text size="xl" className="text-primary-500 cursor-pointer underline">
+            Copy
+          </Text>
+          <Copy01Icon className=" text-primary-500 size-4 ml-1" />
+        </div>
       </div>
 
       <PasswordStrengthCriteria />
 
       <div>
         <Input
-          className="w-[133px] h-[37px]"
+          className="w-[133px] h-[37px] text-[20px] text-grey-100"
           label="Number of words"
           type="number"
           defaultValue={passwordLength.toString()}

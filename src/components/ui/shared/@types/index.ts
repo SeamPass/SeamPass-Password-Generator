@@ -43,6 +43,7 @@ export interface TypographyClasses {
     md?: string;
     lg?: string;
     xl?: string;
+    xxl?: string;
   };
   weight: {
     regular?: string;

@@ -67,7 +67,7 @@ const Customization: React.FC<CustomizationProps> = ({
           className="flex items-center justify-between py-[10px] border-b-[0.5px] border-b-grey-200"
         >
           <div className="flex items-center gap-1">
-            <Text size="normal" variant="primary-200">
+            <Text size="xxl" variant="primary-200">
               {item.text}
             </Text>
             <TooltipProvider>
@@ -81,12 +81,12 @@ const Customization: React.FC<CustomizationProps> = ({
                   avoidCollisions={true}
                   className=" relative bg-primary-100 "
                 >
-                  <Text size="md" weight="medium" className="text-white">
+                  <Text size="normal" weight="medium" className="text-white">
                     {tooltipsInfo[item.text]?.header}
                   </Text>
                   <Text
                     weight="regular"
-                    className="text-white text-[12px] max-w-[150px] w-full"
+                    className="text-white text-[14px] max-w-[150px] w-full"
                   >
                     {tooltipsInfo[item.text]?.message}
                   </Text>

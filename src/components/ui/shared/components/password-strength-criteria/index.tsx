@@ -10,7 +10,7 @@ import Text from "../typography/Text";
 const PasswordStrengthCriteria = () => {
   return (
     <div className="flex items-center gap-2 my-[22px]">
-      <Text weight="medium" size="sm">
+      <Text weight="medium" size="xxl">
         Password strength criteria
       </Text>
 
@@ -27,10 +27,10 @@ const PasswordStrengthCriteria = () => {
           >
             <Text
               weight="regular"
-              className="text-white text-[12px] max-w-[230px]"
+              className="text-white text-[14px] max-w-[230px]"
             >
               <span className=" font-semibold text-sm">Tips:</span> For a strong
-              password, use at least 12 characters, combining letters, numbers,
+              password, use at least 16 characters, combining letters, numbers,
               and special symbols. Make sure the password strength indicator
               shows &apos;Strong&apos; before using your new password.
             </Text>

@@ -9,14 +9,14 @@ const FAQ = () => {
   return (
     <section>
       <ContainerLayout>
-        <div className="flex flex-col items-center mt-[124px]">
+        <div className="flex flex-col items-center mt-[64px] lg:mt-[124px]">
           <Header weight="medium" size="lg">
             Frequently asked questions
           </Header>
           <Text
             variant="primary"
-            className=" w-[768px] mt-2 text-center"
-            size="lg"
+            className="w-full lg:w-[768px] mt-2 text-center"
+            size="xl"
           >
             Everything you need to know about the product and billing.
           </Text>

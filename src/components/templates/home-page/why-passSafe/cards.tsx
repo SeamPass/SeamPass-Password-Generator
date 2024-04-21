@@ -45,7 +45,7 @@ const Cards = () => {
                 </span>
               ))}
 
-              <Text variant="primary" size="lg" className="mt-4">
+              <Text variant="primary" size="xl" className="mt-4">
                 {" "}
                 {card.desc}
               </Text>
@@ -60,7 +60,7 @@ const Cards = () => {
         <Header weight="medium" variant="primary-100" size="md">
           Good <span className=" text-primary-500">User Experience</span>
         </Header>
-        <Text size="lg" variant="primary" className="mt-4 w-full lg:w-[587px]">
+        <Text size="xl" variant="primary" className="mt-4 w-full lg:w-[587px]">
           Our platform ensures accessible navigation and easily comprehensible
           terms, accompanied by intuitive affordances throughout
         </Text>

@@ -1,7 +1,7 @@
 "use client";
 import { Slider } from "@/components/ui/slider";
 import { cn } from "@/lib/utils";
-import { RefreshIcon } from "hugeicons-react";
+import { Copy01Icon, RefreshIcon } from "hugeicons-react";
 import { useEffect, useState } from "react";
 import copyToClipboard from "@/utils/copy-to-clipboard";
 import { usePasswordStrengthMeter } from "@/hooks/usePasswordMeter";
@@ -134,36 +134,38 @@ const RandomPassword = () => {
         <input
           disabled
           type="text"
-          className="flex-1  outline-none px-4 bg-transparent "
+          className="flex-1 w-full text-[16px] md:text-[18px] outline-none px-4 bg-transparent "
           value={password}
         />
 
         <div className="flex items-center">
-          <div className="h-[46px] w-fit border border-grey-200" />
+          <div className="h-[46px] w-fit mr-3 md:mr-5 border border-grey-200" />
           <div className="focus:rotate-180 transition-all duration-200">
             <RefreshIcon
               onClick={() => handleRefresh()}
-              className="mx-5 cursor-pointer "
+              className="mr-3  md:mr-5 cursor-pointer "
             />
           </div>
         </div>
       </div>
-      <div className="flex space-x-6 justify-between mt-5 border-b border-grey-200 pb-4 pr-[22px]">
+      <div className="flex space-x-6 justify-between mt-2 border-b border-grey-200 pb-4 pr-[22px]">
         <span style={{ color: strengthColor }} className="">
           {passwordStrength}
         </span>
-        <Text
+        <div
           onClick={() => copyToClipboard(password)}
-          size="sm"
-          className="text-primary-500 cursor-pointer underline"
+          className="flex items-center cursor-pointer w-fit "
         >
-          Copy
-        </Text>
+          <Text size="xl" className="text-primary-500 cursor-pointer underline">
+            Copy
+          </Text>
+          <Copy01Icon className=" text-primary-500 size-4 ml-1" />
+        </div>
       </div>
 
       <PasswordStrengthCriteria />
 
-      <Text variant="primary" className="text-[16px] mt-[10px]">
+      <Text size="xxl" variant="primary" className="mt-[10px]">
         Password Length
       </Text>
 
@@ -175,7 +177,7 @@ const RandomPassword = () => {
           onValueChange={handleSliderChange}
           className={cn("w-[100%] h-[21px]")}
         />
-        <Text size="normal" variant="primary" className="pl-4 ">
+        <Text size="xxl" variant="primary" className="pl-4 ">
           {passwordLength}
         </Text>
       </div>

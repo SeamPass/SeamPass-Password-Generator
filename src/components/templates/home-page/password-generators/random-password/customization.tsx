@@ -59,7 +59,7 @@ const Customization: FC<CustomizationPasswordProps> = ({
           )}
         >
           <div className="flex items-center gap-1">
-            <Text size="normal" variant="primary-200">
+            <Text size="xxl" variant="primary-200">
               {option}
             </Text>
             <TooltipProvider>
@@ -73,12 +73,12 @@ const Customization: FC<CustomizationPasswordProps> = ({
                   avoidCollisions={true}
                   className=" relative bg-primary-100 "
                 >
-                  <Text size="md" weight="medium" className="text-white">
+                  <Text size="normal" weight="medium" className="text-white">
                     {tooltipsInfo[option].header}
                   </Text>
                   <Text
                     weight="regular"
-                    className="text-white text-[12px] max-w-[150px] w-full"
+                    className="text-white text-[14px] max-w-[150px] w-full"
                   >
                     {tooltipsInfo[option].message}
                   </Text>

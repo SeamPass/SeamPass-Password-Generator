@@ -15,13 +15,13 @@ const PasswordGenerator: FC<PasswordGeneratorProps> = ({
     >
       <TabsList className="bg-[#F3F9FF] h-[64px] w-full md:w-[573px] p-2">
         <TabsTrigger
-          className="h-[42px] w-full text-[12px] md:text-[16px] text-primary-100 data-[state=active]:text-[#F6FAFF] data-[state=active]:bg-primary-500 cursor-pointer"
+          className="h-[42px] w-full text-[12px] sm:text-[16px] xl:text-[18px] text-primary-100 data-[state=active]:text-[#F6FAFF] data-[state=active]:bg-primary-500 cursor-pointer "
           value="random"
         >
           Generate Random password
         </TabsTrigger>
         <TabsTrigger
-          className="h-[42px] w-full text-[12px] md:text-[16px] text-primary-100 data-[state=active]:text-[#F6FAFF] data-[state=active]:bg-primary-500 cursor-pointer"
+          className="h-[42px] w-full text-[12px] sm:text-[16px] xl:text-[18px] text-primary-100 data-[state=active]:text-[#F6FAFF] data-[state=active]:bg-primary-500 cursor-pointer"
           value="memorable"
         >
           Generate Memorable password

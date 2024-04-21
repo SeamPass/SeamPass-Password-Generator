@@ -14,8 +14,9 @@ export default <TypographyClasses>{
     normal: "text-[16px]",
     sm: "text-[14px]",
     md: "text-[20px]",
-    lg: "md:text-[16px] text-[14px]",
+    lg: "md:text-[18px] text-[14px]",
     xl: "xl:text-[20px] sm:text-[16px] text-[14px]",
+    xxl: "text-[16px] md:text-[18px] xl:text-[20px]",
   },
   weight: {
     regular: "font-normal",

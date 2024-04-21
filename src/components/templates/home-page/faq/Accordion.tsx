@@ -12,23 +12,23 @@ const faqs = [
   },
   {
     title: "How do password generator’s work",
-    desc: "A password generator is a web tool that creates unique and random passwords based on security recommendations. The best password generators are the ones that allow you to customize settings according to your requirements. Our tool has plenty of options for the best result.",
+    desc: "Password generators create random combinations of characters based on user settings like length and character types. They use algorithms to ensure unpredictability and avoid common patterns. Good generators analyze password strength and store passwords securely.",
   },
   {
     title: "Are password generators safe?",
-    desc: "A password generator is a web tool that creates unique and random passwords based on security recommendations. The best password generators are the ones that allow you to customize settings according to your requirements. Our tool has plenty of options for the best result.",
+    desc: "Yes, password generators are generally safe when used from reputable sources. Ensure they use strong encryption, randomization, and securely store passwords.",
   },
   {
     title: "Is it safe to generate password online",
-    desc: "A password generator is a web tool that creates unique and random passwords based on security recommendations. The best password generators are the ones that allow you to customize settings according to your requirements. Our tool has plenty of options for the best result.",
+    desc: "Yes, if you use a reputable online password generator that employs strong encryption and randomization techniques, it's generally safe.",
   },
   {
     title: "What are the requirements for a strong password",
-    desc: "A password generator is a web tool that creates unique and random passwords based on security recommendations. The best password generators are the ones that allow you to customize settings according to your requirements. Our tool has plenty of options for the best result.",
+    desc: "For a strong password, aim for at least 16 characters, including a mix of uppercase letters, lowercase letters, numbers, and symbols.",
   },
   {
     title: "What is a bad password",
-    desc: "A password generator is a web tool that creates unique and random passwords based on security recommendations. The best password generators are the ones that allow you to customize settings according to your requirements. Our tool has plenty of options for the best result.",
+    desc: "A bad password is one that is short, easily guessable, or commonly used.",
   },
 ];
 const Accord = () => {
@@ -41,10 +41,10 @@ const Accord = () => {
             value={faq.title}
             className=" py-[16px] lg:py-[24px]"
           >
-            <AccordionTrigger className="text-[#101828] text-[14px] font-normal md:text-[20px]">
+            <AccordionTrigger className="text-[#101828] text-[20px] text-start font-normal ">
               {faq.title}
             </AccordionTrigger>
-            <AccordionContent className="text-[#667085] text-[14px] md:text-base">
+            <AccordionContent className="text-[#667085] text-base  ">
               {faq.desc}
             </AccordionContent>
           </AccordionItem>
