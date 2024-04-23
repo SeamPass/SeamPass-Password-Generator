@@ -24,7 +24,7 @@ const Hero = () => {
             weight="semibold"
             variant="primary-100"
             size="xl"
-            className="w-full md:max-w-[600px] xl:max-w-[700px] leading-[28px] md:leading-[48px] lg:leading-[57px] "
+            className="w-full sm:max-w-[500px] md:max-w-[600px] xl:max-w-[700px] leading-[28px] md:leading-[48px] lg:leading-[57px] "
           >
             <span className=" text-primary-500">PassSafe:</span> Your Essential
             Password Management Solution
@@ -48,7 +48,6 @@ const Hero = () => {
           </div>
         </div>
         <div className="flex  justify-center">
-          {" "}
           <GeneratorLayout>
             <ComponentVisibility appear={passwordGenerator === "memorable"}>
               <MemorablePassword />
