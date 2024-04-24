@@ -1,3 +1,4 @@
+"use client";
 import { HelpCircleIcon } from "hugeicons-react";
 import {
   Tooltip,
@@ -11,7 +12,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 const PasswordStrengthCriteria = () => {
   const searchParams = useSearchParams();
   const type = searchParams.get("type");
-  console.log(searchParams.get("type"));
+
   return (
     <div className="flex items-center gap-2 my-[22px]">
       <Text weight="medium" size="xxl">
