@@ -1,16 +1,12 @@
 "use client";
 import { Button } from "@/components/ui/shared/components/button";
 import Header from "@/components/ui/shared/components/typography/Header";
+import auth from "@/utils/auth";
 import React from "react";
 
 const Login = () => {
-  const handleLogin = () => {
-    window.open("http://localhost:5173/login", "_blank");
-  };
+  const { handleLogin, handleCreateAccount } = auth();
 
-  const handleCreateAccount = () => {
-    window.open("http://localhost:5173/create-account", "_blank");
-  };
   return (
     <div className="w-[1112px] flex flex-col items-center h-[218px] lg:h-[271px] px-[20px] lg:px-0 pt-[30px] lg:pt-[57px] bg-white rounded-[8px] shadow-[0px_20px_40px_0px_rgba(212,212,212,0.25)]">
       <Header

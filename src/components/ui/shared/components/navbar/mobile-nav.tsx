@@ -7,18 +7,11 @@ import { Button } from "../button";
 import { ArrowLeft01Icon, Menu02Icon } from "hugeicons-react";
 import { usePathname, useRouter } from "next/navigation";
 import ComponentVisibility from "../componentVisibility";
+import auth from "@/utils/auth";
 
 const MobileNav = () => {
-  const { push } = useRouter();
   const [showMenu, setShowMenu] = useState(false);
-
-  const handleLogin = () => {
-    window.open("http://localhost:5173/login", "_blank");
-  };
-
-  const handleCreateAccount = () => {
-    window.open("http://localhost:5173/create-account", "_blank");
-  };
+  const { handleLogin, handleCreateAccount } = auth();
   return (
     <ContainerLayout>
       <>

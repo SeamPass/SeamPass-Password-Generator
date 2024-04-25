@@ -4,15 +4,10 @@ import ContainerLayout from "../../layout/container-layout";
 import Image from "next/image";
 import logo from "@/assets/logo/logo.png";
 import { Button } from "../button";
+import auth from "@/utils/auth";
 
 const ExtendedNav = () => {
-  const handleLogin = () => {
-    window.open("http://localhost:5173/login", "_blank");
-  };
-
-  const handleCreateAccount = () => {
-    window.open("http://localhost:5173/create-account", "_blank");
-  };
+  const { handleLogin, handleCreateAccount } = auth();
 
   return (
     <ContainerLayout>
