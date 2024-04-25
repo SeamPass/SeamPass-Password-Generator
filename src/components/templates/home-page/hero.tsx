@@ -9,9 +9,11 @@ import MemorablePassword from "./password-generators/memorable-password";
 import ComponentVisibility from "@/components/ui/shared/components/componentVisibility";
 import RandomPassword from "./password-generators/random-password";
 import Lock from "@/assets/icons/lock";
+import { useSearchParams } from "next/navigation";
 
 const Hero = () => {
-  const [passwordGenerator, setPasswordGenerator] = useState<string>("random");
+  const searchParams = useSearchParams();
+  const type = searchParams.get("type");
 
   return (
     <section className="">
@@ -40,7 +42,7 @@ const Hero = () => {
           </Text>
 
           <div className="mt-3">
-            <PasswordGenerator setPasswordGenerator={setPasswordGenerator} />
+            <PasswordGenerator />
           </div>
 
           <div className=" absolute right-[241px] top-[120px] hidden xl:block">
@@ -49,10 +51,10 @@ const Hero = () => {
         </div>
         <div className="flex  justify-center">
           <GeneratorLayout>
-            <ComponentVisibility appear={passwordGenerator === "memorable"}>
+            <ComponentVisibility appear={type === "memorable" || type === null}>
               <MemorablePassword />
             </ComponentVisibility>
-            <ComponentVisibility appear={passwordGenerator === "random"}>
+            <ComponentVisibility appear={type === "random"}>
               <RandomPassword />
             </ComponentVisibility>
           </GeneratorLayout>
