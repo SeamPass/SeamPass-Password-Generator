@@ -134,7 +134,7 @@ const RandomPassword = () => {
         <input
           disabled
           type="text"
-          className="flex-1 w-full text-[16px] md:text-[18px] outline-none px-4 bg-transparent "
+          className="flex-1 w-full text-[16px] text-primary-300 font-semibold md:text-[18px] outline-none px-4 bg-transparent "
           value={password}
         />
 
