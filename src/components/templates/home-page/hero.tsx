@@ -51,10 +51,10 @@ const Hero = () => {
         </div>
         <div className="flex  justify-center">
           <GeneratorLayout>
-            <ComponentVisibility appear={type === "memorable" || type === null}>
+            <ComponentVisibility appear={type === "memorable"}>
               <MemorablePassword />
             </ComponentVisibility>
-            <ComponentVisibility appear={type === "random"}>
+            <ComponentVisibility appear={type === "random" || type === null}>
               <RandomPassword />
             </ComponentVisibility>
           </GeneratorLayout>
