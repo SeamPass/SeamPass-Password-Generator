@@ -128,6 +128,19 @@ const RandomPassword = () => {
     setStrengthColor(result.color);
   }, [password]);
 
+  const handleColors = () => {
+    if (passwordStrength === "Strong") {
+      return "#ECFFED";
+    }
+    if (passwordStrength === "Weak") {
+      return "#FFD9D7";
+    }
+    if (passwordStrength === "Fair") {
+      return "#FFEDD8";
+    }
+    return "";
+  };
+
   return (
     <div>
       <div className="flex items-center justify-between border border-grey-200  rounded-[16px] h-[75px] overflow-hidden">
@@ -149,9 +162,14 @@ const RandomPassword = () => {
         </div>
       </div>
       <div className="flex space-x-6 justify-between mt-2 border-b border-grey-200 pb-4 pr-[22px]">
-        <span style={{ color: strengthColor }} className="">
-          {passwordStrength}
-        </span>
+        <div
+          className="py-2 px-4 rounded-[16px]"
+          style={{ backgroundColor: handleColors() }}
+        >
+          <span style={{ color: strengthColor }} className="">
+            {passwordStrength}
+          </span>
+        </div>
         <div
           onClick={() => copyToClipboard(password)}
           className="flex items-center cursor-pointer w-fit "
