@@ -8,6 +8,7 @@ import { usePasswordStrengthMeter } from "@/hooks/usePasswordMeter";
 import PasswordStrengthCriteria from "@/components/ui/shared/components/password-strength-criteria";
 import Text from "@/components/ui/shared/components/typography/Text";
 import Customization from "./customization";
+import PasswordStrength from "../password-strength";
 
 // Define types for your options
 type OptionType = {
@@ -128,19 +129,6 @@ const RandomPassword = () => {
     setStrengthColor(result.color);
   }, [password]);
 
-  const handleColors = () => {
-    if (passwordStrength === "Strong") {
-      return "#ECFFED";
-    }
-    if (passwordStrength === "Weak") {
-      return "#FFD9D7";
-    }
-    if (passwordStrength === "Fair") {
-      return "#FFEDD8";
-    }
-    return "";
-  };
-
   return (
     <div>
       <div className="flex items-center justify-between border border-grey-200  rounded-[16px] h-[75px] overflow-hidden">
@@ -152,24 +140,20 @@ const RandomPassword = () => {
         />
 
         <div className="flex items-center">
-          <div className="h-[46px] w-fit mr-3 md:mr-5 border border-grey-200" />
-          <div className="focus:rotate-180 transition-all duration-200">
+          <div className="h-[46px] w-fit  border border-grey-200" />
+          <div className="active:scale-105  transition-all rotate-45 duration-300">
             <RefreshIcon
               onClick={() => handleRefresh()}
-              className="mr-3  md:mr-5 cursor-pointer "
+              className="mx-5 cursor-pointer active:size-10 transition-all active:rotate-180 duration-300"
             />
           </div>
         </div>
       </div>
       <div className="flex space-x-6 justify-between mt-2 border-b border-grey-200 pb-4 pr-[22px]">
-        <div
-          className="py-2 px-4 rounded-[16px]"
-          style={{ backgroundColor: handleColors() }}
-        >
-          <span style={{ color: strengthColor }} className="">
-            {passwordStrength}
-          </span>
-        </div>
+        <PasswordStrength
+          passwordStrength={passwordStrength}
+          strengthColor={strengthColor}
+        />
         <div
           onClick={() => copyToClipboard(password)}
           className="flex items-center cursor-pointer w-fit "

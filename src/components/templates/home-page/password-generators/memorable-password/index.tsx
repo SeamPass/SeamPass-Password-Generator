@@ -8,6 +8,7 @@ import { usePasswordStrengthMeter } from "@/hooks/usePasswordMeter";
 import Text from "@/components/ui/shared/components/typography/Text";
 import PasswordStrengthCriteria from "@/components/ui/shared/components/password-strength-criteria";
 import Customization from "./customization";
+import PasswordStrength from "../password-strength";
 
 const MemorablePassword = () => {
   const [open, setOpen] = useState(false);
@@ -117,17 +118,20 @@ const MemorablePassword = () => {
 
         <div className="flex items-center">
           <div className="h-[46px] w-fit border border-grey-200" />
-          <RefreshIcon
-            onClick={handleRefreshClick}
-            className="mx-5 cursor-pointer"
-          />
+          <div className=" active:scale-105  transition-all rotate-45 duration-300">
+            <RefreshIcon
+              onClick={handleRefreshClick}
+              className="mx-5 cursor-pointer active:size-10 transition-all active:rotate-180 duration-300"
+            />
+          </div>
         </div>
       </div>
 
       <div className="flex space-x-6 justify-between mt-2 border-b border-grey-200 pb-4 pr-[22px]">
-        <span style={{ color: strengthColor }} className="">
-          {passwordStrength}
-        </span>
+        <PasswordStrength
+          passwordStrength={passwordStrength}
+          strengthColor={strengthColor}
+        />
         <div
           onClick={() => copyToClipboard(password)}
           className="flex items-center cursor-pointer w-fit "
