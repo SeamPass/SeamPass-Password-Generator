@@ -34,8 +34,8 @@ const faqs = [
 const Accord = () => {
   return (
     <div className="mt-[24px] xl:mt-[64px]">
-      <Accordion type="single" collapsible>
-        {faqs.map((faq) => (
+      {faqs.map((faq) => (
+        <Accordion type="single" collapsible>
           <AccordionItem
             key={faq.title}
             value={faq.title}
@@ -48,8 +48,8 @@ const Accord = () => {
               {faq.desc}
             </AccordionContent>
           </AccordionItem>
-        ))}
-      </Accordion>
+        </Accordion>
+      ))}
     </div>
   );
 };

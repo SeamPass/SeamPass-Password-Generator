@@ -11,7 +11,6 @@ import Customization from "./customization";
 import PasswordStrength from "../password-strength";
 
 const MemorablePassword = () => {
-  const [open, setOpen] = useState(false);
   const [wordList, setWordList] = useState<string[]>([]);
   const [customOptions, setCustomOptions] = useState([
     { text: "Use number", isTrue: false },
