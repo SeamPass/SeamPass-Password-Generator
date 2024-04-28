@@ -76,3 +76,8 @@
       @apply bg-white font-spartan ;
     }
   }
+
+
+  .react-tooltip__show {
+    opacity: 1 !important;
+  }

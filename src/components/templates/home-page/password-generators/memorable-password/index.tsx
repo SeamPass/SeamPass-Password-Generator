@@ -110,9 +110,9 @@ const MemorablePassword = () => {
     <div>
       <div className="flex items-center border border-grey-200  rounded-[16px] h-[75px] overflow-hidden">
         <input
-          disabled
+          readOnly
           type="text"
-          className="flex-1 h-full text-primary-300 font-semibold  outline-none text-[16px] md:text-[20px]  px-4 bg-transparent "
+          className="flex-1 h-full !text-primary-300 !font-semibold  outline-none !text-[16px] !md:text-[20px]  px-4 bg-transparent "
           value={password}
         />
 
