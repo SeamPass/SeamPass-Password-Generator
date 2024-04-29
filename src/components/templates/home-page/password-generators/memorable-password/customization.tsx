@@ -72,7 +72,7 @@ const Customization: React.FC<CustomizationProps> = ({
               id={`tooltip-${index}`}
               style={{ backgroundColor: "#001F3F" }}
             >
-              <Text size="md" weight="medium" className="text-white">
+              <Text size="normal" weight="medium" className="text-white">
                 {tooltipsInfo[item.text]?.header}
               </Text>
               <Text

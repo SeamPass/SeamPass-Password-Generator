@@ -34,9 +34,13 @@ const faqs = [
 const Accord = () => {
   return (
     <div className="mt-[24px] xl:mt-[64px]">
-      {faqs.map((faq, index) => (
-        <Accordion key={faq.title} type="single" collapsible>
-          <AccordionItem value={faq.title} className="py-[16px] lg:py-[24px]">
+      <Accordion type="single" collapsible>
+        {faqs.map((faq, index) => (
+          <AccordionItem
+            key={faq.title}
+            value={faq.title}
+            className="py-[16px] lg:py-[24px]"
+          >
             <AccordionTrigger className="text-[#101828] text-[20px] text-start font-normal ">
               {faq.title}
             </AccordionTrigger>
@@ -44,8 +48,8 @@ const Accord = () => {
               {faq.desc}
             </AccordionContent>
           </AccordionItem>
-        </Accordion>
-      ))}
+        ))}
+      </Accordion>
     </div>
   );
 };
