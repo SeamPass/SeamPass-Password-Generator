@@ -13,6 +13,7 @@ const ExtendedNav = () => {
     <ContainerLayout>
       <div className="flex !h-[77px]  justify-between items-center  ">
         <Image src={logo} width={200} height={200} alt="logo" />
+        <div></div>
         <div className="w-fit flex items-center gap-[10px] ">
           <Button
             onClick={handleLogin}
