@@ -28,7 +28,7 @@ const Hero = () => {
             size="xl"
             className="w-full sm:max-w-[500px] md:max-w-[600px] xl:max-w-[700px] leading-[28px] md:leading-[48px] lg:leading-[57px] "
           >
-            <span className=" text-primary-500">PassSafe:</span> Your Essential
+            <span className=" text-primary-500">SeamPass:</span> Your Essential
             Password Management Solution
           </Header>
 
@@ -37,7 +37,7 @@ const Hero = () => {
             variant="primary"
             className="max-w-[401px] mt-3 md:mt-6 "
           >
-            PassSafe provides you with the tools and features needed to assert
+            SeamPass provides you with the tools and features needed to assert
             control over your online presence.
           </Text>
 
