@@ -27,7 +27,7 @@
 ## 🚀 Getting Started (Yarn)
 
 ```bash
-git clone https://github.com/your-username/seampass.git
-cd seampass
+git clone https://github.com/SeamPass/passSafe-landing-page.git
+cd passSafe-landing-page
 yarn install
 yarn dev
