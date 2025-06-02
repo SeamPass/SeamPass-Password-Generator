@@ -21,6 +21,7 @@
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Radix UI](https://www.radix-ui.com/)
 - [zxcvbn](https://github.com/dropbox/zxcvbn)
+- [TypeScript](https://www.typescriptlang.org/)
 
 ---
 
