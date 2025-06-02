@@ -1,41 +1,38 @@
+---
 name: Bug report
-description: Report a bug or issue with SeamPass
-title: "[Bug]: "
-labels: ["bug"]
-assignees: []
+about: Create a report to help us improve
+title: ''
+labels: ''
+assignees: ''
 
-body:
-  - type: textarea
-    id: description
-    attributes:
-      label: What happened?
-      description: Briefly describe the bug.
-      placeholder: The password doesn’t generate when clicking the button.
-    validations:
-      required: true
+---
 
-  - type: textarea
-    id: steps
-    attributes:
-      label: How to reproduce it?
-      description: Steps someone can follow to see the bug.
-      placeholder: |
-        1. Go to the homepage
-        2. Click "Generate password"
-        3. Nothing happens
-    validations:
-      required: true
+**Describe the bug**
+A clear and concise description of what the bug is.
 
-  - type: textarea
-    id: expected
-    attributes:
-      label: What did you expect?
-      description: What should have happened instead?
-      placeholder: A password should appear immediately.
+**To Reproduce**
+Steps to reproduce the behavior:
+1. Go to '...'
+2. Click on '....'
+3. Scroll down to '....'
+4. See error
 
-  - type: textarea
-    id: device
-    attributes:
-      label: Device info (optional)
-      description: Mention your browser, device, or OS if you can.
-      placeholder: Chrome on macOS, or Safari on iPhone
+**Expected behavior**
+A clear and concise description of what you expected to happen.
+
+**Screenshots**
+If applicable, add screenshots to help explain your problem.
+
+**Desktop (please complete the following information):**
+ - OS: [e.g. iOS]
+ - Browser [e.g. chrome, safari]
+ - Version [e.g. 22]
+
+**Smartphone (please complete the following information):**
+ - Device: [e.g. iPhone6]
+ - OS: [e.g. iOS8.1]
+ - Browser [e.g. stock browser, safari]
+ - Version [e.g. 22]
+
+**Additional context**
+Add any other context about the problem here.
