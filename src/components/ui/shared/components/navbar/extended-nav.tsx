@@ -15,18 +15,10 @@ const ExtendedNav = () => {
         <Image src={logo} width={200} height={200} alt="logo" />
         <div></div>
         <div className="w-fit flex items-center gap-[10px] ">
-          <Button
-            onClick={handleLogin}
-            variant="tertiary"
-            className="!w-fit px-8"
-          >
+          <Button onClick={handleLogin} variant="tertiary" className="!w-fit px-8">
             Log in
           </Button>
-          <Button
-            onClick={handleCreateAccount}
-            variant="primary"
-            className="!w-fit px-4"
-          >
+          <Button onClick={handleCreateAccount} variant="primary" className="!w-fit px-4">
             Create account
           </Button>
         </div>

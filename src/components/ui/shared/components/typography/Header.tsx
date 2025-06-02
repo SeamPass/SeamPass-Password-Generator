@@ -3,10 +3,7 @@ import { HeaderClasses } from "../../@types";
 import themes from "../../themes/header.themes";
 
 interface IHeaderProps
-  extends React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLElement>,
-    HTMLElement
-  > {
+  extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> {
   size?: keyof HeaderClasses["size"];
   weight?: keyof HeaderClasses["weight"];
   variant?: keyof HeaderClasses["variant"];
@@ -15,14 +12,7 @@ interface IHeaderProps
   alignment?: keyof HeaderClasses["alignment"];
 }
 
-const Header = ({
-  className,
-  children,
-  size,
-  weight,
-  variant,
-  alignment,
-}: IHeaderProps) => {
+const Header = ({ className, children, size, weight, variant, alignment }: IHeaderProps) => {
   return (
     <h2
       className={`${variant && themes.variant[variant]} ${

@@ -5,7 +5,6 @@ import Image from "next/image";
 import logo from "@/assets/logo/logo.png";
 import { Button } from "../button";
 import { ArrowLeft01Icon, Menu02Icon } from "hugeicons-react";
-import { usePathname, useRouter } from "next/navigation";
 import ComponentVisibility from "../componentVisibility";
 import auth from "@/utils/auth";
 
@@ -42,18 +41,10 @@ const MobileNav = () => {
                 Go back
               </span>
               <div className=" flex flex-col gap-[16px] mt-4 ">
-                <Button
-                  onClick={handleLogin}
-                  variant="tertiary"
-                  className=" px-8"
-                >
+                <Button onClick={handleLogin} variant="tertiary" className=" px-8">
                   Log in
                 </Button>
-                <Button
-                  onClick={handleCreateAccount}
-                  variant="primary"
-                  className=" px-4"
-                >
+                <Button onClick={handleCreateAccount} variant="primary" className=" px-4">
                   Create account
                 </Button>
               </div>

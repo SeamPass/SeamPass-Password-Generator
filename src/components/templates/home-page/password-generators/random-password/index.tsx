@@ -20,7 +20,6 @@ const letters: string = "abcdefghijklmnopqrstuvwxyz";
 const specialCharacters: string = "!@#$%^&*()_+-=[]{}|;':\",./<>?";
 
 const RandomPassword = () => {
-  const [open, setOpen] = useState(false);
   const [progress, setProgress] = useState<number[]>([52]);
   const [passwordStrength, setPasswordStrength] = useState<string>("");
   const [strengthColor, setStrengthColor] = useState<string>("");
@@ -81,16 +80,13 @@ const RandomPassword = () => {
         case "letter": {
           let character = letters.charAt(secureRandom(letters.length));
           if (options["Use capitals"]) {
-            character =
-              Math.random() < 0.5 ? character.toUpperCase() : character;
+            character = Math.random() < 0.5 ? character.toUpperCase() : character;
           }
           newPasswordComponents.push(character);
           break;
         }
         case "number":
-          newPasswordComponents.push(
-            numbers.charAt(secureRandom(numbers.length))
-          );
+          newPasswordComponents.push(numbers.charAt(secureRandom(numbers.length)));
           break;
         case "special":
           newPasswordComponents.push(
@@ -150,10 +146,7 @@ const RandomPassword = () => {
         </div>
       </div>
       <div className="flex space-x-6 justify-between mt-2 border-b border-grey-200 pb-4 pr-[22px]">
-        <PasswordStrength
-          passwordStrength={passwordStrength}
-          strengthColor={strengthColor}
-        />
+        <PasswordStrength passwordStrength={passwordStrength} strengthColor={strengthColor} />
         <div
           onClick={() => copyToClipboard(password)}
           className="flex items-center cursor-pointer w-fit "

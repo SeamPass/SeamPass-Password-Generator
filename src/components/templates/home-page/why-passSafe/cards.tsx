@@ -61,8 +61,8 @@ const Cards = () => {
           Good <span className=" text-primary-500">User Experience</span>
         </Header>
         <Text size="xl" variant="primary" className="mt-4 w-full lg:w-[587px]">
-          Our platform ensures accessible navigation and easily comprehensible
-          terms, accompanied by intuitive affordances throughout
+          Our platform ensures accessible navigation and easily comprehensible terms, accompanied by
+          intuitive affordances throughout
         </Text>
       </div>
     </div>

@@ -3,10 +3,7 @@ interface PasswordStrengthProps {
   passwordStrength: string;
   strengthColor: string;
 }
-const PasswordStrength: FC<PasswordStrengthProps> = ({
-  passwordStrength,
-  strengthColor,
-}) => {
+const PasswordStrength: FC<PasswordStrengthProps> = ({ passwordStrength, strengthColor }) => {
   const handleColors = () => {
     if (passwordStrength === "Strong") {
       return "#ECFFED";
@@ -20,10 +17,7 @@ const PasswordStrength: FC<PasswordStrengthProps> = ({
     return "";
   };
   return (
-    <div
-      className="py-2 px-4 rounded-[16px]"
-      style={{ backgroundColor: handleColors() }}
-    >
+    <div className="py-2 px-4 rounded-[16px]" style={{ backgroundColor: handleColors() }}>
       <span style={{ color: strengthColor }} className="">
         {passwordStrength}
       </span>

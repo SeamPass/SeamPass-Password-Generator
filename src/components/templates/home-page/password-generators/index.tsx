@@ -1,8 +1,8 @@
-import React, { FC, useState } from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import React from "react";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useRouter } from "next/navigation";
 
-const PasswordGenerator = ({}) => {
+const PasswordGenerator = () => {
   const { push } = useRouter();
 
   return (
@@ -16,15 +16,13 @@ const PasswordGenerator = ({}) => {
           className="h-[42px] w-full text-[14px] sm:text-[16px] xl:text-[18px] text-primary-100 data-[state=active]:text-[#F6FAFF] data-[state=active]:bg-primary-500 cursor-pointer "
           value="random"
         >
-          <span className="hidden sm:block">Generate&nbsp;</span> Random
-          password
+          <span className="hidden sm:block">Generate&nbsp;</span> Random password
         </TabsTrigger>
         <TabsTrigger
           className="h-[42px] w-full text-[14px] sm:text-[16px] xl:text-[18px] text-primary-100 data-[state=active]:text-[#F6FAFF] data-[state=active]:bg-primary-500 cursor-pointer"
           value="memorable"
         >
-          <span className="hidden sm:block">Generate&nbsp;</span>Memorable
-          password
+          <span className="hidden sm:block">Generate&nbsp;</span>Memorable password
         </TabsTrigger>
       </TabsList>
     </Tabs>

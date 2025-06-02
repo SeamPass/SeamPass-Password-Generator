@@ -5,10 +5,7 @@ type ComponentVisibilityProps = {
   children: ReactNode;
 };
 
-const ComponentVisibility: FC<ComponentVisibilityProps> = ({
-  appear,
-  children,
-}) => {
+const ComponentVisibility: FC<ComponentVisibilityProps> = ({ appear, children }) => {
   return appear ? children : "";
 };
 

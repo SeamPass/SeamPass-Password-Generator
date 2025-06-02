@@ -18,17 +18,10 @@ const Login = () => {
         Log in to our platform and enjoy the confidence that you need
       </Header>
       <div className="w-fit flex items-center gap-[10px] mt-7 ">
-        <Button
-          onClick={handleCreateAccount}
-          className="!w-fit px-4 bg-primary-500 text-white"
-        >
+        <Button onClick={handleCreateAccount} className="!w-fit px-4 bg-primary-500 text-white">
           Create account
         </Button>
-        <Button
-          onClick={handleLogin}
-          variant="tertiary"
-          className="!w-fit px-8"
-        >
+        <Button onClick={handleLogin} variant="tertiary" className="!w-fit px-8">
           Log in
         </Button>
       </div>

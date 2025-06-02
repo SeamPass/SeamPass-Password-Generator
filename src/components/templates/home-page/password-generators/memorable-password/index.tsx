@@ -32,29 +32,15 @@ const MemorablePassword = () => {
   }, []);
 
   const transformWord = (word: string): string => {
-    if (
-      customOptions.find(
-        (option) => option.text === "Use Uppercase" && option.isTrue
-      )
-    ) {
+    if (customOptions.find((option) => option.text === "Use Uppercase" && option.isTrue)) {
       const index = Math.floor(Math.random() * word.length);
       word =
-        word.substring(0, index) +
-        word.charAt(index).toUpperCase() +
-        word.substring(index + 1);
+        word.substring(0, index) + word.charAt(index).toUpperCase() + word.substring(index + 1);
     }
-    if (
-      customOptions.find(
-        (option) => option.text === "Use number" && option.isTrue
-      )
-    ) {
+    if (customOptions.find((option) => option.text === "Use number" && option.isTrue)) {
       word += Math.floor(Math.random() * 10).toString();
     }
-    if (
-      customOptions.find(
-        (option) => option.text === "Use characters" && option.isTrue
-      )
-    ) {
+    if (customOptions.find((option) => option.text === "Use characters" && option.isTrue)) {
       const specialChars = "!@#$%^&*";
       word += specialChars[Math.floor(Math.random() * specialChars.length)];
     }
@@ -95,9 +81,7 @@ const MemorablePassword = () => {
     setStrengthColor(result.color);
   }, [password]);
 
-  const handlePasswordLengthChange = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ): void => {
+  const handlePasswordLengthChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     // eslint-disable-next-line prefer-const
     let newLength = parseInt(event.target.value, 10);
     if (!isNaN(newLength) && newLength >= 1 && newLength <= 10) {
@@ -127,10 +111,7 @@ const MemorablePassword = () => {
       </div>
 
       <div className="flex space-x-6 justify-between mt-2 border-b border-grey-200 pb-4 pr-[22px]">
-        <PasswordStrength
-          passwordStrength={passwordStrength}
-          strengthColor={strengthColor}
-        />
+        <PasswordStrength passwordStrength={passwordStrength} strengthColor={strengthColor} />
         <div
           onClick={() => copyToClipboard(password)}
           className="flex items-center cursor-pointer w-fit "

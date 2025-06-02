@@ -1,52 +1,96 @@
-# Contributing to SeamPass
+# 🤝 Contributing to SeamPass
 
-Thank you for your interest in contributing to SeamPass! This document provides guidelines for contributing to the project.
+Welcome! We're thrilled that you'd like to contribute to **SeamPass**, a simple and secure password generator built with modern tools.
 
-## Development Setup
+Your contributions — whether it's bug fixes, improvements, or new features — are highly appreciated!
 
-1. Fork and clone the repository
-2. Install dependencies:
+---
+
+## 📋 Table of Contents
+
+- [How to Contribute](#how-to-contribute)
+- [Development Setup](#development-setup)
+- [Code Guidelines](#code-guidelines)
+- [Linting & Formatting](#linting--formatting)
+- [Git Commit Guidelines](#git-commit-guidelines)
+- [Need Help?](#need-help)
+
+---
+
+## ✅ How to Contribute
+
+1. **Fork** the repo
+2. **Create a branch** for your feature or fix
+
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+
+3. **Make your changes**
+4. **Commit and push**
+
+   ```bash
+   git add .
+   git commit -m "Add: Your descriptive commit message"
+   git push origin feature/your-feature-name
+   ```
+
+5. **Open a Pull Request** against the `master` branch
+
+We'll review and merge your PR as soon as possible!
+
+---
+
+## 🛠 Development Setup
+
 ```bash
 yarn install
+yarn dev
 ```
 
-## Development Workflow
+Open [http://localhost:3000](http://localhost:3000) to view in your browser.
 
-1. Create a new branch:
+---
+
+## 🧹 Code Guidelines
+
+- Use **TypeScript** for all components
+- Keep code modular and reusable
+- Use **Radix UI** and **TailwindCSS** for UI elements
+- Password generation logic lives in `lib/`
+
+---
+
+## 🧼 Linting & Formatting
+
+We use ESLint and Prettier.
+
+To run manually:
+
 ```bash
-git checkout -b feature/your-feature-name
+yarn lint
 ```
 
-2. Make your changes and commit:
-```bash
-git commit -m "Description of changes"
-```
+> **Note:** Pre-commit hooks will automatically lint and format your staged code using Husky + lint-staged
 
-<!-- 3. Run tests:
-```bash
-yarn test
-``` -->
+---
 
-4. Push to your fork and submit a pull request
+## ✅ Git Commit Guidelines
 
-## Pull Request Guidelines
+Use clear, concise commit messages. For example:
 
-<!-- - Ensure tests pass: `yarn test` -->
-- Follow existing code style
-- Update documentation if needed
-- One feature/fix per PR
-- Keep commits clean and descriptive
+- `Add: Generate memorable password with uppercase option`
+- `Fix: Handle empty password length edge case`
+- `Update: Improve copy-to-clipboard UX`
 
-## Code Style
+---
 
-- Use Prettier for formatting
-- Follow ESLint rules
-- Write meaningful commit messages
+## 💬 Need Help?
 
-## Questions?
+If you're stuck or have any questions, feel free to open an issue or start a discussion. We're here to help!
 
-Open an issue for any questions about contributing.
+Thanks for being awesome 🙌
 
-## License
+---
 
-By contributing, you agree that your contributions will be licensed under the project's license.
+© 2025 SeamPass. Licensed under the [MIT License](LICENSE).

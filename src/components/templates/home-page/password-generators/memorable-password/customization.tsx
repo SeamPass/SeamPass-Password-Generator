@@ -26,15 +26,10 @@ interface TooltipsInfo {
   [key: string]: TooltipInfo;
 }
 
-const Customization: React.FC<CustomizationProps> = ({
-  setOptions,
-  options,
-}) => {
+const Customization: React.FC<CustomizationProps> = ({ setOptions, options }) => {
   const handleChecked = (index: number) => {
     setOptions((prev) =>
-      prev.map((item, idx) =>
-        idx === index ? { ...item, isTrue: !item.isTrue } : item
-      )
+      prev.map((item, idx) => (idx === index ? { ...item, isTrue: !item.isTrue } : item))
     );
   };
 
@@ -68,25 +63,16 @@ const Customization: React.FC<CustomizationProps> = ({
             <a data-tooltip-id={`tooltip-${index}`}>
               <InformationDiamondIcon className="size-5 text-[#197CE2] cursor-pointer" />
             </a>
-            <Tooltip
-              id={`tooltip-${index}`}
-              style={{ backgroundColor: "#001F3F" }}
-            >
+            <Tooltip id={`tooltip-${index}`} style={{ backgroundColor: "#001F3F" }}>
               <Text size="normal" weight="medium" className="text-white">
                 {tooltipsInfo[item.text]?.header}
               </Text>
-              <Text
-                weight="regular"
-                className="text-white text-[12px] max-w-[150px] w-full"
-              >
+              <Text weight="regular" className="text-white text-[12px] max-w-[150px] w-full">
                 {tooltipsInfo[item.text]?.message}
               </Text>
             </Tooltip>
           </div>
-          <Switch
-            checked={item.isTrue}
-            onCheckedChange={() => handleChecked(index)}
-          />
+          <Switch checked={item.isTrue} onCheckedChange={() => handleChecked(index)} />
         </div>
       ))}
     </div>

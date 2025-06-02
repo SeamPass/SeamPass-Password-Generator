@@ -2,7 +2,7 @@
 import { HelpCircleIcon } from "hugeicons-react";
 import { Tooltip } from "react-tooltip";
 import Text from "../typography/Text";
-import { useRouter, useSearchParams } from "next/navigation";
+import {  useSearchParams } from "next/navigation";
 
 const PasswordStrengthCriteria = () => {
   const searchParams = useSearchParams();
@@ -28,24 +28,16 @@ const PasswordStrengthCriteria = () => {
         }}
       >
         {type === "memorable" ? (
-          <Text
-            weight="regular"
-            className="text-white text-[14px] max-w-[230px]"
-          >
-            <span className=" font-semibold text-sm">Tips:</span> For a strong
-            memorable password, use at least 3 words, Make sure the password
-            strength indicator shows &apos;Strong&apos; before using your new
-            password.
+          <Text weight="regular" className="text-white text-[14px] max-w-[230px]">
+            <span className=" font-semibold text-sm">Tips:</span> For a strong memorable password,
+            use at least 3 words, Make sure the password strength indicator shows &apos;Strong&apos;
+            before using your new password.
           </Text>
         ) : (
-          <Text
-            weight="regular"
-            className="text-white text-[14px] max-w-[230px]"
-          >
-            <span className=" font-semibold text-sm">Tips:</span> For a strong
-            password, use at least 16 characters, combining letters, numbers,
-            and special symbols. Make sure the password strength indicator shows
-            &apos;Strong&apos; before using your new password.
+          <Text weight="regular" className="text-white text-[14px] max-w-[230px]">
+            <span className=" font-semibold text-sm">Tips:</span> For a strong password, use at
+            least 16 characters, combining letters, numbers, and special symbols. Make sure the
+            password strength indicator shows &apos;Strong&apos; before using your new password.
           </Text>
         )}
       </Tooltip>

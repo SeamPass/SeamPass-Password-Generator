@@ -19,10 +19,7 @@ interface TooltipsInfo {
   [option: string]: TooltipInfo;
 }
 
-const Customization: FC<CustomizationPasswordProps> = ({
-  options,
-  onCheckedChange,
-}) => {
+const Customization: FC<CustomizationPasswordProps> = ({ options, onCheckedChange }) => {
   const tooltipsInfo: TooltipsInfo = {
     "Use number": {
       header: "Numeric Characters",
@@ -69,18 +66,12 @@ const Customization: FC<CustomizationPasswordProps> = ({
               <Text size="md" weight="medium" className="text-white">
                 {tooltipsInfo[option].header}
               </Text>
-              <Text
-                weight="regular"
-                className="text-white text-[12px] max-w-[150px] w-full"
-              >
+              <Text weight="regular" className="text-white text-[12px] max-w-[150px] w-full">
                 {tooltipsInfo[option].message}
               </Text>
             </Tooltip>
           </div>
-          <Switch
-            checked={options[option]}
-            onCheckedChange={() => onCheckedChange(option)}
-          />
+          <Switch checked={options[option]} onCheckedChange={() => onCheckedChange(option)} />
         </div>
       ))}
     </div>

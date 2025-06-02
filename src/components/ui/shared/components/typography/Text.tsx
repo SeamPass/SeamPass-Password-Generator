@@ -14,22 +14,12 @@ interface IText
   className?: string;
 }
 
-const Text = ({
-  variant,
-  size,
-  weight,
-  alignment,
-  children,
-  className,
-  ...rest
-}: IText) => {
+const Text = ({ variant, size, weight, alignment, children, className, ...rest }: IText) => {
   return (
     <p
       className={`${className} ${size && themes.size[size]} ${
         alignment && themes.alignment[alignment]
-      } ${weight && themes.weight[weight]} ${
-        variant && themes.variant[variant]
-      }`}
+      } ${weight && themes.weight[weight]} ${variant && themes.variant[variant]}`}
       {...rest}
     >
       {children}

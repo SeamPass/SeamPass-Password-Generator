@@ -13,8 +13,8 @@ const WhyPassSafe = () => {
             Why PassSafe
           </Header>
           <Text variant="primary" className="max-w-[560px] mt-2" size="xl">
-            Your digital identity holds immense value, and safeguarding it is of
-            uttermost importance
+            Your digital identity holds immense value, and safeguarding it is of uttermost
+            importance
           </Text>
         </div>
         <Cards />
