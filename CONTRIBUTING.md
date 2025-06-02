@@ -48,7 +48,28 @@ yarn install
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view in your browser.
+## 🐳 Running Locally with Docker
+
+To run the project in a Docker container:
+
+1. **Build the Docker image**
+
+   ```bash
+   docker build -t seampass .
+
+   ```
+
+2. **Run the Docker container**
+
+   ```bash
+   docker run -p 3000:3000 seampass
+
+   ```
+
+3. **Open your browser and visit:**
+   ```bash
+   http://localhost:3000
+   ```
 
 ---
 
