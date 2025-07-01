@@ -2,9 +2,9 @@
 import React, { useState } from "react";
 import ContainerLayout from "../../layout/container-layout";
 import Image from "next/image";
-import logo from "@/assets/logo/logo.png";
+import logo from "@/assets/logo/logo.svg";
 import { Button } from "../button";
-import { ArrowLeft01Icon, Menu02Icon } from "hugeicons-react";
+import { ArrowLeft01Icon } from "hugeicons-react";
 import ComponentVisibility from "../componentVisibility";
 import auth from "@/utils/auth";
 
@@ -15,9 +15,9 @@ const MobileNav = () => {
     <ContainerLayout>
       <>
         <div className="flex !h-[77px]  justify-between items-center   ">
-          <Image src={logo} width={150} height={150} alt="logo" />
+          <Image src={logo} width={120} height={35} className="object-contain" alt="logo" />
           <div className="w-fit flex items-center gap-[10px] ">
-            <ComponentVisibility appear={!showMenu}>
+            {/* <ComponentVisibility appear={!showMenu}>
               <Button
                 onClick={() => {
                   setShowMenu(true);
@@ -26,7 +26,7 @@ const MobileNav = () => {
               >
                 <Menu02Icon />
               </Button>
-            </ComponentVisibility>
+            </ComponentVisibility> */}
           </div>
         </div>
 

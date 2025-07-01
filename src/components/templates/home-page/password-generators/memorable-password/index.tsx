@@ -79,7 +79,7 @@ const MemorablePassword = () => {
     const result = handleShowPasswordStrength(password);
     setPasswordStrength(result.strengthMessage);
     setStrengthColor(result.color);
-  }, [password]);
+  }, [password, handleShowPasswordStrength]);
 
   const handlePasswordLengthChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     // eslint-disable-next-line prefer-const
