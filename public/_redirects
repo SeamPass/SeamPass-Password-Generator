@@ -1,1 +1,2 @@
-/* https://seampass.com/:splat 301!
+# Only redirect if request is from the Netlify subdomain
+/* https://seampass.com/:splat 301! Domain=seampass.netlify.app
