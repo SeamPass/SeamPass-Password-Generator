@@ -1,6 +1,0 @@
-[[redirects]]
-  from = "/*"
-  to = "https://seampass.com/:splat"
-  status = 301
-  force = true
-  conditions = { Host = "seampass.netlify.app" }
