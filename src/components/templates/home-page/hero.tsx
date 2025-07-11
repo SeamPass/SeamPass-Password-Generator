@@ -55,6 +55,31 @@ const Hero = () => {
             </ComponentVisibility>
           </GeneratorLayout>
         </div>
+
+        {/* SEO-friendly feature highlights */}
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+          <div className="p-4">
+            <h2 className="text-lg font-semibold text-gray-800 mb-2">🔒 100% Secure</h2>
+            <p className="text-sm text-gray-600">
+              All password generation happens locally in your browser. No data is ever sent to our
+              servers.
+            </p>
+          </div>
+          <div className="p-4">
+            <h2 className="text-lg font-semibold text-gray-800 mb-2">⚡ Instant Generation</h2>
+            <p className="text-sm text-gray-600">
+              Generate strong passwords instantly with our advanced algorithms and real-time
+              strength analysis.
+            </p>
+          </div>
+          <div className="p-4">
+            <h2 className="text-lg font-semibold text-gray-800 mb-2">🎯 Customizable</h2>
+            <p className="text-sm text-gray-600">
+              Customize your passwords with length, character types, and memorable word
+              combinations.
+            </p>
+          </div>
+        </div>
       </ContainerLayout>
     </section>
   );
