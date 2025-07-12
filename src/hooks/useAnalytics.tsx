@@ -29,7 +29,7 @@ export const useAnalytics = () => {
 
   const trackPasswordGeneration = (type: "random" | "memorable") => {
     console.log("Analytics: Tracking password generation:", type);
-    trackEvent("password_generated", {
+    trackEvent("generate_password", {
       password_type: type,
       event_category: "password_generator",
     });
@@ -37,7 +37,7 @@ export const useAnalytics = () => {
 
   const trackPasswordCopy = (type: "random" | "memorable") => {
     console.log("Analytics: Tracking password copy:", type);
-    trackEvent("password_copied", {
+    trackEvent("copy_password", {
       password_type: type,
       event_category: "password_generator",
       event_label: "password_copied",
@@ -46,7 +46,7 @@ export const useAnalytics = () => {
 
   const trackPasswordStrength = (strength: string) => {
     console.log("Analytics: Tracking password strength:", strength);
-    trackEvent("password_strength_analyzed", {
+    trackEvent("analyze_password_strength", {
       strength_level: strength,
       event_category: "password_generator",
     });
