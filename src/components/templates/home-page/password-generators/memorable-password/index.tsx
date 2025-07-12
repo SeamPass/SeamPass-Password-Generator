@@ -9,6 +9,7 @@ import Text from "@/components/ui/shared/components/typography/Text";
 import PasswordStrengthCriteria from "@/components/ui/shared/components/password-strength-criteria";
 import Customization from "./customization";
 import PasswordStrength from "../password-strength";
+import { useAnalytics } from "@/hooks/useAnalytics";
 
 const MemorablePassword = () => {
   const [wordList, setWordList] = useState<string[]>([]);
@@ -21,6 +22,7 @@ const MemorablePassword = () => {
   const [passwordLength, setPasswordLength] = useState<number>(3);
   const [passwordStrength, setPasswordStrength] = useState<string>("");
   const [strengthColor, setStrengthColor] = useState<string>("");
+  const { trackPasswordCopy, trackPasswordGeneration, trackPasswordStrength } = useAnalytics();
 
   useEffect(() => {
     fetch("/eff_large_wordlist.txt")
@@ -65,11 +67,18 @@ const MemorablePassword = () => {
 
   useEffect(() => {
     generatePassword();
+    if (password) {
+      trackPasswordGeneration("memorable");
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [wordList, passwordLength, customOptions]);
 
   const handleRefreshClick = (): void => {
     generatePassword();
+
+    if (password) {
+      trackPasswordGeneration("memorable");
+    }
   };
 
   // show strength of passwords
@@ -79,7 +88,11 @@ const MemorablePassword = () => {
     const result = handleShowPasswordStrength(password);
     setPasswordStrength(result.strengthMessage);
     setStrengthColor(result.color);
-  }, [password, handleShowPasswordStrength]);
+
+    if (password && result.strengthMessage) {
+      trackPasswordStrength(result.strengthMessage);
+    }
+  }, [password]);
 
   const handlePasswordLengthChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     // eslint-disable-next-line prefer-const
@@ -87,6 +100,11 @@ const MemorablePassword = () => {
     if (!isNaN(newLength) && newLength >= 1 && newLength <= 10) {
       setPasswordLength(newLength);
     }
+  };
+
+  const handleCopyToClipboard = () => {
+    copyToClipboard(password);
+    trackPasswordCopy("memorable");
   };
 
   return (
@@ -112,10 +130,7 @@ const MemorablePassword = () => {
 
       <div className="flex space-x-6 justify-between mt-2 border-b border-grey-200 pb-4 pr-[22px]">
         <PasswordStrength passwordStrength={passwordStrength} strengthColor={strengthColor} />
-        <div
-          onClick={() => copyToClipboard(password)}
-          className="flex items-center cursor-pointer w-fit "
-        >
+        <div onClick={handleCopyToClipboard} className="flex items-center cursor-pointer w-fit ">
           <Text size="xl" className="text-primary-500 cursor-pointer underline">
             Copy
           </Text>

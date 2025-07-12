@@ -20,9 +20,11 @@ export const useAnalytics = () => {
     });
   };
 
-  const trackPasswordCopy = () => {
+  const trackPasswordCopy = (type: "random" | "memorable") => {
     trackEvent("password_copied", {
+      password_type: type,
       event_category: "password_generator",
+      event_label: "password_copied",
     });
   };
 

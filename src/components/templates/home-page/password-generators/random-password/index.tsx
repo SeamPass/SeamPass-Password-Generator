@@ -9,6 +9,7 @@ import PasswordStrengthCriteria from "@/components/ui/shared/components/password
 import Text from "@/components/ui/shared/components/typography/Text";
 import Customization from "./customization";
 import PasswordStrength from "../password-strength";
+import { useAnalytics } from "@/hooks/useAnalytics";
 
 // Define types for your options
 type OptionType = {
@@ -30,6 +31,7 @@ const RandomPassword = () => {
     "Use characters": false,
     "Use capitals": false,
   });
+  const { trackPasswordCopy, trackPasswordGeneration, trackPasswordStrength } = useAnalytics();
 
   // This function maps the slider's value (0 to 100) to a range of 1 to 15
   const convertToPasswordLength = (progress: number) => {
@@ -101,6 +103,7 @@ const RandomPassword = () => {
 
   const handleRefresh = () => {
     generatePassword();
+    trackPasswordGeneration("random");
   };
 
   // When the user toggles the switch options, update the options state
@@ -114,6 +117,9 @@ const RandomPassword = () => {
   // Generate a new password when options or password length change
   useEffect(() => {
     generatePassword();
+    if (password) {
+      trackPasswordGeneration("random");
+    }
   }, [options, passwordLength]);
 
   // show strength of passwords
@@ -123,7 +129,16 @@ const RandomPassword = () => {
     const result = handleShowPasswordStrength(password);
     setPasswordStrength(result.strengthMessage);
     setStrengthColor(result.color);
+
+    if (password && result.strengthMessage) {
+      trackPasswordStrength(result.strengthMessage);
+    }
   }, [password]);
+
+  const handleCopyToClipboard = () => {
+    copyToClipboard(password);
+    trackPasswordCopy("random");
+  };
 
   return (
     <div>
@@ -147,10 +162,7 @@ const RandomPassword = () => {
       </div>
       <div className="flex space-x-6 justify-between mt-2 border-b border-grey-200 pb-4 pr-[22px]">
         <PasswordStrength passwordStrength={passwordStrength} strengthColor={strengthColor} />
-        <div
-          onClick={() => copyToClipboard(password)}
-          className="flex items-center cursor-pointer w-fit "
-        >
+        <div onClick={handleCopyToClipboard} className="flex items-center cursor-pointer w-fit ">
           <Text size="xl" className="text-primary-500 cursor-pointer underline">
             Copy
           </Text>
